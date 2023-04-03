@@ -6,6 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+
 public class ListaaTiedotActivity extends AppCompatActivity {
 
     private UserStorage storage;
@@ -18,6 +22,12 @@ public class ListaaTiedotActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.user_view_list);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        Collections.sort(storage.getUsers(), new Comparator<User>(){
+           public int compare(User u1, User u2) {
+               return u1.getFirsName().compareToIgnoreCase(u2.getFirsName());
+           }
+        });
         recyclerView.setAdapter(new UserViewAdapter(getApplicationContext(), storage.getUsers()));
     }
 }

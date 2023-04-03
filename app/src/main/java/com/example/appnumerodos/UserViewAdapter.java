@@ -2,7 +2,9 @@ package com.example.appnumerodos;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,10 +33,40 @@ public class UserViewAdapter extends RecyclerView.Adapter<UserViewHolder> {
         holder.email.setText(users.get(position).getEmail());
         holder.ala.setText(users.get(position).getDegreeProgram());
         holder.userimageView.setImageResource(users.get(position).getImage());
+        holder.erikoismaininta.setText(users.get(position).getErikoisMaininnat());
+
+        if (users.get(position).getAlempiTutkinto() != null) {
+            holder.tutkinto1.setText(users.get(position).getAlempiTutkinto());
+        } else {
+            holder.tutkinto1.setVisibility(View.GONE);
+        }
+
+        if (users.get(position).getYlempiTutkinto() != null) {
+            holder.tutkinto2.setText(users.get(position).getYlempiTutkinto());
+        } else {
+            holder.tutkinto2.setVisibility(View.GONE);
+        }
+
+        if (users.get(position).getYlinTutkinto() != null) {
+            holder.tutkinto3.setText(users.get(position).getYlinTutkinto());
+        } else {
+            holder.tutkinto3.setVisibility(View.GONE);
+        }
+
+        if (users.get(position).getErikoisMaininnat() != null) {
+            holder.erikoismaininta.setText(users.get(position).getErikoisMaininnat());
+        } else {
+            holder.erikoismaininta.setVisibility(View.GONE);
+        }
+
     }
 
     @Override
     public int getItemCount() {
         return users.size();
     }
+
+
+
+
 }

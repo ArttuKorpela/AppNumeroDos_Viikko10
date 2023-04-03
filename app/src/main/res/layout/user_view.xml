@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="90dp"
+    android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
     android:background="#BC673AB7"
     android:orientation="horizontal">
@@ -15,10 +16,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="wrap_content"
         android:animationCache="true"
         android:background="#009C27B0"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingLeft="5dp">
 
         <TextView
             android:id="@+id/txtNimi"
@@ -26,6 +28,7 @@
             android:layout_height="wrap_content"
             android:autoText="false"
             android:text=" Arttu Korpela"
+            android:textColor="#0B0909"
             android:textSize="18sp" />
 
         <TextView
@@ -39,5 +42,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tietotekniikka" />
+
+        <TextView
+            android:id="@+id/txtKandi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kandidaatin tutkinto" />
+
+        <TextView
+            android:id="@+id/txtDI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dippa" />
+
+        <TextView
+            android:id="@+id/txtTohtori"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tohtori" />
+
+        <TextView
+            android:id="@+id/txtErikoismaininnat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="Saunamajuri"
+            android:textColor="#FFC107"
+            android:textStyle="bold" />
+
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>
